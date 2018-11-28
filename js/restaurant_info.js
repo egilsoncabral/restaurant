@@ -5,7 +5,7 @@ var newMap;
  * Initialize map as soon as the page is loaded.
  */
 document.addEventListener('DOMContentLoaded', (event) => {  
-  initMap();
+  //initMap();
 });
 
 /**
@@ -148,20 +148,29 @@ fillReviewsHTML = (reviews = self.restaurant.reviews) => {
  */
 createReviewHTML = (review) => {
   const li = document.createElement('li');
+  const div = document.createElement('div');
   const name = document.createElement('p');
   name.innerHTML = review.name;
-  li.appendChild(name);
+  name.style = 'float:left; line-height: 30px; color: #fff;margin-left: 10px; font-size: 18px;'
+  
+  div.style = 'background: #696969; height: 30px; padding:10px; width:auto; border-radius: 25px 0px 0px 0px;'
 
   const date = document.createElement('p');
   date.innerHTML = review.date;
-  li.appendChild(date);
+  date.style = 'float:right; line-height: 30px;margin-right: 5px; font-size: 15px; color: #ccc; text-shadow: 1px 1px black;';
+  
+  div.appendChild(name);
+  div.appendChild(date);
+  li.appendChild(div);
 
   const rating = document.createElement('p');
-  rating.innerHTML = `Rating: ${review.rating}`;
+  rating.innerHTML = `RATING: ${review.rating}`;
+  rating.style = 'border-radius: 5px; font-weight:bold; background: #ffae4b; width:70px; padding:10px; margin-top: 20px; margin-left: 20px;text-align:center; color:white;';
   li.appendChild(rating);
 
   const comments = document.createElement('p');
   comments.innerHTML = review.comments;
+  comments.style='padding:20px;'
   li.appendChild(comments);
 
   return li;
