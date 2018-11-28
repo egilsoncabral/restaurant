@@ -1,7 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pt-br" lang="pt-br">
 
 <head>
+  <meta http-equiv="Content-Type" content="text/xhtml; charset=UTF-8" />
+  <meta http-equiv="Content-Language" content="pt-br">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- Normalize.css for better cross-browser consistency -->
   <link rel="stylesheet" src="//normalize-css.googlecode.com/svn/trunk/normalize.css" />
@@ -13,13 +15,13 @@
 
 <body class="inside">
   <!-- Beginning header -->
-  <header>
+  <header role="banner">
     <!-- Beginning nav -->
     <nav>
       <h1><a href="/">Restaurant Reviews</a></h1>
     </nav>
     <!-- Beginning breadcrumb -->
-    <ul id="breadcrumb" >
+    <ul id="breadcrumb" role="breadcrumb">
       <li><a href="/">Home</a></li>
     </ul>
     <!-- End breadcrumb -->
@@ -31,7 +33,7 @@
   <main id="maincontent">
     <!-- Beginning map -->
     <section id="map-container">
-      <div id="map"></div>
+      <div id="map" role="map"></div>
     </section>
     <!-- End map -->
     <!-- Beginning restaurant -->
@@ -61,7 +63,7 @@
   <!-- End scripts -->
 
   <!-- Beginning footer -->
-  <footer id="footer">
+  <footer id="footer" role="contentinfo">
     Copyright (c) 2017 <a href="/"><strong>Restaurant Reviews</strong></a> All Rights Reserved.
   </footer>
   <!-- End footer -->

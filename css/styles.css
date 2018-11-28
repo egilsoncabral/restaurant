@@ -27,6 +27,12 @@ a:hover, a:focus {
 	color: #3397db;
 	text-decoration: none;
 }
+a:focus, img:focus{
+  box-shadow: 0 0 5px rgba(81, 203, 238, 1);
+  padding: 3px 0px 3px 3px;
+  margin: 5px 1px 3px 0px;
+  border: 1px solid rgba(81, 203, 238, 1);
+}
 a img{
 	border: none 0px #fff;
 }
@@ -122,13 +128,17 @@ nav h1 a {
   display: inline-flex;
 }
 
-.filter-options h2 {
+.filter-options h2{
   color: white;
   font-size: 1rem;
   font-weight: normal;
-  
   margin-top: 20px;
-  margin-left:5%;
+  margin-left:20px;
+}
+.filter-options label{
+  color: white;
+  font-size: 1rem;
+  font-weight: normal;
   
 }
 .filter-options select {
@@ -319,9 +329,4 @@ nav h1 a {
   
   }
 }
-@media (max-width: 775px){
-  #restaurants-list li {
-    
-    
-  }
-}
+

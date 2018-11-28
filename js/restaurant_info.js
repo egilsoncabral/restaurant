@@ -82,6 +82,7 @@ fetchRestaurantFromURL = (callback) => {
 fillRestaurantHTML = (restaurant = self.restaurant) => {
   const name = document.getElementById('restaurant-name');
   name.innerHTML = restaurant.name;
+  name.tabIndex = 0;
 
   const address = document.getElementById('restaurant-address');
   address.innerHTML = restaurant.address;
@@ -89,6 +90,9 @@ fillRestaurantHTML = (restaurant = self.restaurant) => {
   const image = document.getElementById('restaurant-img');
   image.className = 'restaurant-img'
   image.src = DBHelper.imageUrlForRestaurant(restaurant);
+  image.alt = 'Restaurant ' + restaurant.name + ' image';
+  image.tabIndex = 0;
+  
 
   const cuisine = document.getElementById('restaurant-cuisine');
   cuisine.innerHTML = restaurant.cuisine_type;
@@ -152,6 +156,7 @@ createReviewHTML = (review) => {
   const name = document.createElement('p');
   name.innerHTML = review.name;
   name.style = 'float:left; line-height: 30px; color: #fff;margin-left: 10px; font-size: 18px;'
+  name.tabIndex = 0;
   
   div.style = 'background: #696969; height: 30px; padding:10px; width:auto; border-radius: 25px 0px 0px 0px;'
 
@@ -172,6 +177,9 @@ createReviewHTML = (review) => {
   comments.innerHTML = review.comments;
   comments.style='padding:20px;'
   li.appendChild(comments);
+
+  li.setAttribute('role','listitem');
+  li.setAttribute('aria-label', `Reviewed by ${review.name}`)
 
   return li;
 }
