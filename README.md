@@ -13,7 +13,11 @@ The entire project was thinked to observe the follow requirements:
 	1. Clone project
 
 		$ git clone https://github.com/egilsoncabral/restaurant.git
-		
+	
+	2. Executing
+
+		You will need to configurate your server port in dbhelper.js. The default port is 5500.
+
 	   
 ## License
 
