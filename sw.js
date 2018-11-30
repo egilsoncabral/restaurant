@@ -1,5 +1,7 @@
 var staticCacheName = 'mws-restaurant-v1';
-
+/**
+ * Verify for install service worker listener event and cache the elements
+ */
 self.addEventListener('install', function(event) {
   event.waitUntil(
     caches.open(staticCacheName).then(function(cache) {
@@ -19,6 +21,10 @@ self.addEventListener('install', function(event) {
   );
 });
 
+
+/**
+ * Verify for actived service worker listener event and delete old caches
+ */
 self.addEventListener('activate', function(event) {
   event.waitUntil(
     caches.keys().then(function(cacheNames) {
@@ -34,16 +40,13 @@ self.addEventListener('activate', function(event) {
   );
 });
 
+/**
+ * Verify for fetch listener event and respond with cache element or fetch a request to the server
+ */
 self.addEventListener('fetch', function(event) {
   event.respondWith(
     caches.match(event.request).then(function(response) {
       return response || fetch(event.request);
     })
   );
-});
-
-self.addEventListener('message', function(event) {
-  if (event.data.action === 'skipWaiting') {
-    self.skipWaiting();
-  }
 });

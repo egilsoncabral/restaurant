@@ -1,4 +1,7 @@
 class IndexController {
+    /**
+    * @description Register the service worker on navigator
+    */
     static registerServiceWorker() {
         if (!navigator.serviceWorker) return;
 
